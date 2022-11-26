@@ -37,7 +37,7 @@ class Subject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['file', 'subject', 'okato', 'population', 'population_rising', 'administrative_center', 'territory'], 'required', 'message' => 'Обязательно для заполнения.'],
+            [['subject', 'okato', 'population', 'population_rising', 'administrative_center', 'territory'], 'required', 'message' => 'Обязательно для заполнения.'],
             [['okato', 'population', 'territory', 'status_id',], 'integer'],
             [['subject', 'administrative_center'], 'string', 'max' => 255],
             [['file'], 'file'],
