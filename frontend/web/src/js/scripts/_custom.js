@@ -1,18 +1,43 @@
-const hamburger = document.querySelector(".hamburger");
-if (hamburger) {
-	hamburger.addEventListener("click", function () {
+document.addEventListener('alpine:init', () => {
+	Alpine.store('openForm', {
+		on: false,
+		close: false,
 
-		var width = window.innerWidth - document.body.clientWidth;
-		let bodyTag = document.querySelector("body");
+		toggle() {
+			this.on = ! this.on;
+		},
 
-		bodyTag.classList.toggle("-scrollbar-width");
-		bodyTag.classList.toggle("lock");
-
-		if (bodyTag.classList.contains("-scrollbar-width")) {
-			bodyTag.style.marginRight = width + "px";
-		} else {
-			bodyTag.style.marginRight = "auto";
+		closeForm() {
+			this.close = true;
+			this.on = false;
 		}
 	});
-}
 
+	Alpine.data('imgPreview', () => ({
+		imgsrc:null,
+		previewFile() {
+			let file = this.$refs.myFile.files[0];
+			if(!file || file.type.indexOf('image/') === -1) return;
+			this.imgsrc = null;
+			let reader = new FileReader();
+	
+			reader.onload = e => {
+				this.imgsrc = e.target.result;
+			}
+	
+			reader.readAsDataURL(file);
+		
+		},
+
+		clearFile(){
+			this.imgsrc = null;
+		},
+
+		showedImage(){
+			if(this.imgsrc != null){
+				return true;
+			}
+		}
+
+	  }))
+})

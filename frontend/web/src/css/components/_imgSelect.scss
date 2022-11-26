@@ -43,6 +43,13 @@
 		display: inline-block;
 		font-size: 12px;
 		margin-top: 5px;
+		position: absolute;
+		bottom: 15px;
+		text-align: center;
+	}
+
+	&.has-error {
+		border: 1px dashed red;
 	}
 
 	.clearImage {

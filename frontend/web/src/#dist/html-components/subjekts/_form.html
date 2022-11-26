@@ -2,11 +2,21 @@
 <div class="subject-form-wrapper" x-data :class="$store.openForm.on && '-active'">
 
 
+
 	<svg  class="icon-close-form"  x-data @click.prevent="$store.openForm.closeForm()">
 		<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
 	</svg>
 
-	<!--  тут успех -->
+	<div class="success-add-subject" x-data :class="$store.openForm.close && '-closed'">
+
+		<div class="success-add-text">
+			<svg  class="close-form">
+				<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#cuccess" aria-hidden="true"></use>
+			</svg>
+			Добавлено
+		</div>
+
+	</div>
 
 	<div class="h2">Добавить</div>
 

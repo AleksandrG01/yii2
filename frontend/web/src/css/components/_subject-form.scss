@@ -29,6 +29,12 @@
 	@include md-after {
 		& {
 			padding: 80px;
+			max-width: 65%;
+		}
+	}
+
+	@include lg-after {
+		& {
 			max-width: 45%;
 		}
 	}

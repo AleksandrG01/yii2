@@ -12,6 +12,6 @@
 
 //include('../../vendor/swiper/swiper-bundle.min.js')
 //include('../../vendor/sweetalert2/dist/sweetalert2.all.min.js')
-@@include('_dynamic_adaptation.js')
+//include('_dynamic_adaptation.js')
 //include('_scroll_animation.js')
 @@include('_custom.js')

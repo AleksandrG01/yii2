@@ -3,6 +3,11 @@
 	&.-active {
 		@include md-after {
 			& {
+				transform: translateX(65%);
+			}
+		}
+		@include lg-after {
+			& {
 				transform: translateX(45%);
 			}
 		}
@@ -52,6 +57,11 @@
 		left: 10px;
 		top: 15px;
 		width: 40px;
+		border-radius: 50%;
+
+		img {
+			border-radius: 50%;
+		}
 		
 		@include md-after {
 			& {

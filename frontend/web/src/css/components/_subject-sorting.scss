@@ -8,7 +8,7 @@
 .subject-sorting {
 	position: relative;
 	cursor: pointer;
-	max-width: 300px;
+	max-width: 280px;
 	flex: 1 0 auto;
 	.subject-sorting-text {
 		transition: $trans;
@@ -25,6 +25,11 @@
 		span {
 			font-weight: 700;
 			font-size: 1rem;
+			@include md-after {
+				& {
+					font-size: 1rem;
+				}
+			}
 		}
 		
 		&::before {
@@ -68,10 +73,12 @@
 		border-radius: 8px;
 		color: #fff;
 		
-		li {
+		li a {
 			transition: $trans;
 			background: #3D3598;
 			padding: 16px 10px;
+			display: block;
+			text-decoration: none;
 			cursor: pointer;
 			&:hover {
 				background: rgba(255, 255, 255, 0.1);
