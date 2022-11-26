@@ -1,0 +1,182 @@
+.form-group {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	position: relative;
+
+	&.required {
+		color: #ff4545;
+	}
+
+	& label.control-label {
+		width: 100%;
+		margin: 0px 0px 15px 0px;
+		text-align: left;
+		font-size: 1rem;
+		font-weight: 700;
+		color: #fff;
+	}
+
+	& input,
+	select,
+	textarea {
+		width: 100%;
+		padding: 16px 10px;
+		box-sizing: border-box;
+		font-style: normal;
+		background: transparent;
+		font-weight: 400;
+		font-size: 1rem;
+		border: 1px solid #ffffff;
+		border-radius: 8px;
+		box-sizing: border-box;
+		color: #fff;
+		transition: $trans;
+
+		@include xl-after {
+			& {
+				padding: 22px 10px;
+			}
+		}
+
+		&::placeholder {
+			color: $input_placeholder;
+		}
+
+		&:focus {
+			background: #211e41;
+			border: 1px solid #ffffff;
+			outline: 0;
+			color: #fff;
+		}
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.05);
+		}
+	}
+
+	& textarea {
+		min-height: 300px;
+	}
+
+	& .help-block,
+	.visible {
+		color: #ff4545;
+		display: inline-block;
+		font-size: 12px;
+		margin-top: 5px;
+		text-align: left;
+		width: 100%;
+		position: absolute;
+		bottom: -20px;
+	}
+
+
+
+	&.-switch {
+		display: inline-block;
+		height: 34px;
+		position: relative;
+		flex: 0 0 50px;
+		input {
+			display: none;
+		}
+
+		.slider {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid #FFFFFF;
+			bottom: 0;
+			cursor: pointer;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: 0.4s;
+			&:hover {
+				background: rgba(255, 255, 255, 0.1);
+			}
+			&:focus {
+				background: rgba(255, 255, 255, 0.2);
+			}
+		}
+
+		.slider:before {
+			background-color: #fff;
+			bottom: 3px;
+			content: "";
+			height: 26px;
+			left: 4px;
+			position: absolute;
+			transition: 0.4s;
+			width: 26px;
+		}
+
+		input:checked + .slider {
+			background: #FF0000;
+			&:hover {
+				background: #FF5151;
+			}
+			&:focus {
+				background: #9F2828;
+			}
+		}
+
+		input:checked + .slider:before {
+			transform: translateX(15px);
+		}
+
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+	}
+
+	&.checkbox-radio-group {
+		input[type="radio"],
+		input[type="checkbox"] {
+			display: none;
+
+			&:checked + label:before {
+				background: #fff url(../images/checkmark.svg) 50% 50% no-repeat;
+				background-size: 10px auto;
+			}
+
+			& + label {
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				padding-left: 34px;
+
+				&:before {
+					content: "";
+					display: inline-block;
+					position: absolute;
+					left: 0;
+					top: -1px;
+					width: 22px;
+					height: 22px;
+					background-color: #fff;
+					border: 1px solid #000;
+					cursor: pointer;
+				}
+			}
+		}
+
+		input[type="radio"] {
+			& + label {
+				&:before {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+
+.switch-lable {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #fff;
+}

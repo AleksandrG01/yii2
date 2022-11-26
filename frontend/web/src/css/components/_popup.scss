@@ -1,0 +1,20 @@
+.mfp-hide {
+	display: none !important;
+}
+
+div#swal2-html-container>.mfp-hide {
+	display: block !important;
+}
+
+.swal2-html-container {
+	margin: 0!important;
+	background-color: #000;
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+	height: inherit!important;
+}
+
+.swal2-popup.swal2-modal.swal2-icon-success.swal2-show {
+    padding: 25px;
+}

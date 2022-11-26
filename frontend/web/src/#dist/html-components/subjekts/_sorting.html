@@ -1,0 +1,23 @@
+<div class="subject-sorting-wrapper">
+	<a href="#" class="button -hover-red-bg -iconed-right" :class="{ '-scrolled': styckyMenu, '': !styckyMenu }"
+	@scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" x-data @click.prevent="$store.openForm.toggle()">
+		Добавить 
+		<i>
+			<svg>
+				<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+			</svg>
+		</i>
+	</a>
+	<div class="subject-sorting" x-data="{show:0, item:''}"  @click.away="show = false">
+		<div class="subject-sorting-text" @click="show = !show" @keydown.enter="show = !show" :class="{'active' : show}">
+			Сортировать по 
+			<span x-text="item" >Популярности</span>
+		</div>
+		<ul class="subject-sorting-list" x-show="show" x-cloak>
+			<li @click="item = 'Территории'; show = false">Территории</li>
+			<li @click="item = 'Населению'; show = false">Населению</li>
+			<li @click="item = 'Окато'; show = false">Окато</li>
+		</ul>
+	</div>
+</div>
+

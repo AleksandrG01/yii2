@@ -1,0 +1,75 @@
+.imgSelect {
+	display: flex;
+	position: relative;
+	width: 144px;
+	height: 144px;
+	padding-bottom: 144px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px dashed #FFFFFF;
+	border-radius: 50%;
+	cursor: pointer;
+
+	&.-active {
+		border: 1px dashed transparent;
+	}
+
+	input {
+		display: none;
+	}
+	img {
+		border-radius: 50%;
+	}
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	&:focus {
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.image-plaseholder {
+		position: absolute;
+		text-align: center;
+		font-weight: 700;
+		color: #fff;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	& .help-block {
+		color: #ff4545;
+		display: inline-block;
+		font-size: 12px;
+		margin-top: 5px;
+	}
+
+	.clearImage {
+
+		position: absolute;
+		width: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 36px;
+		background: #fff;
+		right: 0;
+		border-radius: 50%;
+		display: none;
+
+		svg {
+			display: block;
+			fill: $blue;
+			border-radius: 50%;
+			width: 25px;
+			height: 28px;
+		}
+
+		&.-active {
+			display: flex;
+		}
+	}
+
+
+}

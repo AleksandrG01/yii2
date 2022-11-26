@@ -1,0 +1,164 @@
+.section-subjects {
+	transition: $trans;
+	&.-active {
+		@include md-after {
+			& {
+				transform: translateX(45%);
+			}
+		}
+		@include xxl-after {
+			& {
+				transform: translateX(35%);
+			}
+		}
+	}
+}
+
+.subject-items {
+	margin-bottom: 40px;
+	.subject-item {
+		position: relative;
+		padding: 8px 10px;
+		border-width: 1px 1px 0px 1px;
+		border-color: rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		transition: $trans;
+		@include md-after {
+			& {
+				padding: 40px 20px;
+			}
+		}
+
+
+		&:first-child {
+			border-style: solid;
+			border-radius: 20px 20px 0px 0px;
+		}
+		&:last-child {
+			border-radius: 0px 0px 20px 20px;
+		}
+	
+		&:nth-child(even){
+			background: rgba(255, 255, 255, 0.05);
+		}
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+		}
+	}
+
+	.subject-image {
+		padding-bottom: 40px;
+		position: absolute;
+		left: 10px;
+		top: 15px;
+		width: 40px;
+		
+		@include md-after {
+			& {
+				left: 20px;
+				top: 30px;
+				width: 60px;
+				padding-bottom: 60px;
+			}
+		}
+	}
+
+	.subject-options {
+		display: flex;
+	}
+
+	.subject-option-item {
+		margin-right: 23px;
+		@include md-after {
+			& {
+				margin-right: 45px;
+				
+			}
+		}
+	}
+
+	.subject-title {
+		font-weight: 700;
+		color: #fff;
+		font-size: 1rem;
+		margin-bottom: 20px;
+		padding-left: 40px;		
+		margin-top: 15px;
+		padding-left: 50px;
+		@include md-after {
+			& {
+				padding-left: 0px;
+				font-size: 1.5rem;
+				margin-top: 0px;
+			}
+		}
+	}
+	.subject-option-title {
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.4);
+		font-size: 0.625rem;
+		margin-bottom: 2px;
+		@include md-after {
+			& {
+				font-size: 0.75rem;	
+			}
+		}
+
+	}
+	.subject-option-text {
+		font-weight: 700;
+		color: #fff;
+		font-size: 0.875rem;
+		@include md-after {
+			& {
+				font-size: 1rem;
+				
+			}
+		}
+	}
+
+	.subject-deskription {
+		@include md-after {
+			& {
+				padding-left: 80px;
+			}
+		}
+	}
+
+	.subject-okato {
+		position: absolute;
+		right: 20px;
+		top: 36%;
+    	transform: translateY(-50%);
+		@include md-after {
+			& {
+				top: 50%;
+				
+			}
+		}
+		.subject-okato-title {
+			font-weight: 400;
+			color: rgba(255, 255, 255, 0.4);
+			font-size: 0.625rem;
+			margin-bottom: 2px;
+			text-transform: uppercase;
+			@include md-after {
+				& {
+					font-size: 0.75rem;
+				}
+			}
+		}
+		.subject-okato-text {
+			font-weight: 700;
+			color: rgba(255, 255, 255, 0.4);
+			font-size: 1.5rem;
+			line-height: 0.8;
+			@include md-after {
+				& {
+					font-size: 5rem;
+					
+				}
+			}
+		}
+	}
+}

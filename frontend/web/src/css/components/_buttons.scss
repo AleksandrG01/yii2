@@ -1,0 +1,82 @@
+.button {
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 16px 10px;
+    transition: $trans;
+    letter-spacing: 0.45px;
+    width: 100%;
+    max-width: 138px;
+    line-height: 1.2;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: 0 !important;
+    text-align: center;
+    display: inline-block;
+	border: 1px solid transparent;
+    &.-green-bg {
+        background-color: $green;
+    }
+
+    &.-red-bg {
+        background-color: $red;
+        color: #fff;
+        &:hover {
+            background-color: #FF5151;
+        }
+        &:focus {
+            background-color: #9F2828;
+        }
+    }
+
+    &.-hover-red-bg {
+        color: #fff;
+        &:hover {
+            background-color: #FF5151;
+        }
+        &:focus {
+            background-color: #9F2828;
+        }
+    }
+
+    &.-iconed-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            display: block;
+            height: 14px;
+            margin-left: 10px;
+        }
+        i svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+button.swal2-close {
+    background-color: #fff;
+    border-radius: 0;
+	color: #090909;
+    border: 1px solid #000;
+
+    &:hover {
+        background-color: rgb(225, 225, 225);
+    }
+
+    @include md-after {
+        & {
+            margin-top: -24px;
+            margin-right: -24px;
+        }
+    }
+}
+
+.swal2-popup.swal2-modal {
+    border-radius: 0px;
+    padding-bottom: 0;
+}
+

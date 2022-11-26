@@ -1,0 +1,24 @@
+.main-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	line-height: 1.2;
+	@include md-after {
+		& {
+			margin-top: 100px;
+			margin-bottom: 40px;
+			font-size: 3rem;
+		}
+	}
+	@include lg-after {
+		& {
+			font-size: 4rem;
+			
+		}
+	}
+	&.-scrolled {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Demo</title>
+</head>
+
+
+<body >
+
+
+<div class="wrapper" x-data="{ styckyMenu: false }">
+    <header class="header" 
+        :class="{ '-scrolled': styckyMenu, '': !styckyMenu }"
+        @scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" >
+
+    <div class="container" >
+        <div class="header-wrapper">
+            <a href="#" class="button -hover-red-bg -iconed-right" x-data @click.prevent="$store.openForm.toggle()">
+                Добавить 
+                <i>
+                    <svg>
+                        <use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+                    </svg>
+                </i>
+            </a>
+
+            <svg class="add-subject" x-data @click.prevent="$store.openForm.toggle()">
+                <use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+            </svg>
+
+
+            <div class="header-title">Субъекты Российской Федерации</div>
+        </div>
+    </div>
+
+</header> 
+    
+    <main class="main">
+        
+<section class="section-subjects" x-data :class="$store.openForm.on && '-active'">
+	<div class="container">
+		<h1 class="main-title" :class="{ '-scrolled': styckyMenu, '': !styckyMenu }" @scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" >Субъекты Российской Федерации</h1>
+		<div class="subject-sorting-wrapper">
+	<a href="#" class="button -hover-red-bg -iconed-right" :class="{ '-scrolled': styckyMenu, '': !styckyMenu }"
+	@scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" x-data @click.prevent="$store.openForm.toggle()">
+		Добавить 
+		<i>
+			<svg>
+				<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+			</svg>
+		</i>
+	</a>
+	<div class="subject-sorting" x-data="{show:0, item:''}"  @click.away="show = false">
+		<div class="subject-sorting-text" @click="show = !show" @keydown.enter="show = !show" :class="{'active' : show}">
+			Сортировать по 
+			<span x-text="item" >Популярности</span>
+		</div>
+		<ul class="subject-sorting-list" x-show="show" x-cloak>
+			<li @click="item = 'Территории'; show = false">Территории</li>
+			<li @click="item = 'Населению'; show = false">Населению</li>
+			<li @click="item = 'Окато'; show = false">Окато</li>
+		</ul>
+	</div>
+</div>
+
+
+		<div class="subject-items">
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+
+	<div class="subject-item">
+		<div class="subject-image _pic-fluid">
+			<img src="images/gerb_1668975307.png" alt="">
+		</div>
+		<div class="subject-deskription">
+			<div class="subject-title">Республика Адыгея</div>
+			<div class="subject-options">
+				<div class="subject-option-item">
+					<div class="subject-option-title">Адм. центр</div>
+					<div class="subject-option-text">Майкоп</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Территория</div>
+					<div class="subject-option-text">7792 км2</div>
+				</div>
+				<div class="subject-option-item">
+					<div class="subject-option-title">Население</div>
+					<div class="subject-option-text">496 934 чел.</div>
+				</div>
+			</div>
+		</div>
+		<div class="subject-okato">
+			<div class="subject-okato-title">окато</div>
+			<div class="subject-okato-text">79</div>
+		</div>
+	</div>
+</div>
+		<ul class="pagination">
+	<li class="prev disabled"><span>«</span></li>
+	<li class="active"><a href="/subjects/index" data-page="0">1</a></li>
+	<li><a href="/subjects/index?page=2" data-page="1">2</a></li>
+	<li><a href="/subjects/index?page=3" data-page="2">3</a></li>
+	<li><a href="/subjects/index?page=4" data-page="3">4</a></li>
+	<li><a href="/subjects/index?page=5" data-page="4">5</a></li>
+	<li><a href="/subjects/index?page=6" data-page="5">6</a></li>
+	<li><a href="/subjects/index?page=7" data-page="6">7</a></li>
+	<li class="next"><a href="/subjects/index?page=2" data-page="1">»</a></li>
+</ul>
+	</div>
+</section>
+
+<div class="subject-form-wrapper" x-data :class="$store.openForm.on && '-active'">
+
+
+
+	<svg  class="icon-close-form"  x-data @click.prevent="$store.openForm.closeForm()">
+		<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+	</svg>
+
+	<div class="success-add-subject" x-data :class="$store.openForm.close && '-closed'">
+
+		<div class="success-add-text">
+			<svg  class="close-form">
+				<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#cuccess" aria-hidden="true"></use>
+			</svg>
+			Добавлено
+		</div>
+
+	</div>
+
+	<div class="h2">Добавить</div>
+
+	<form class="send-message-form">
+
+		<div class="form-group" style="display: none;">
+			<input type="text" name="secondname">
+			<span data-validate-for="secondname"></span>
+		</div>
+
+
+		<div x-data="imgPreview" x-cloak class="form-group" >
+			<label for="imgSelect" class="imgSelect _pic-fluid"  x-bind:class="{ '-active': showedImage() }">
+				<input type="file" id="imgSelect" accept="image/*" x-ref="myFile" @change="previewFile">
+				<span class="image-plaseholder">Добавить <br> герб</span>
+				<template x-if="imgsrc">
+					<img :src="imgsrc">
+				</template>
+				<span class="clearImage" @click="clearFile" x-bind:class="{ '-active': showedImage() }">
+					<svg  >
+						<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#trash" aria-hidden="true"></use>
+					</svg>
+				</span>
+			</label>
+			<div data-validate-for="name" class=" help-block"></div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-8">
+				<div class="form-group field-subject-subject required has-error">
+					<label class="control-label" for="subject-subject">Субъект</label>
+					<input type="text" id="subject-subject" class="form-control" name="Subject[subject]" maxlength="255" aria-required="true" aria-invalid="true">
+					<div class="help-block"></div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="form-group field-subject-subject required has-error">
+					<label class="control-label" for="subject-subject">Окато</label>
+					<input x-mask="999" type="text" id="subject-subject" class="form-control" name="Subject[subject]" maxlength="255" aria-required="true" aria-invalid="true">
+					<div class="help-block"></div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="form-group field-subject-subject required has-error">
+					<label class="control-label" for="subject-subject">Административный центр</label>
+					<input type="text" id="subject-subject" class="form-control" name="Subject[subject]" maxlength="255" aria-required="true" aria-invalid="true">
+					<div class="help-block"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group field-subject-subject required has-error">
+					<label class="control-label" for="subject-subject">Население / чел</label>
+					<input x-mask="9999999999" type="text" id="subject-subject" class="form-control" name="Subject[subject]" maxlength="255" aria-required="true" aria-invalid="true">
+					<div class="help-block"></div>
+				</div>
+			</div>
+			<div class="col-6 _align-center">
+				<span class="_align-right switch-lable">Население растёт</span>
+				<label class="form-group -switch ">
+					<input type="checkbox" id="subject-population_rising" name="Subject[population_rising]" value="1" aria-required="true">
+					<div class="slider round"></div>
+					<div class="help-block"></div>
+				</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group field-subject-subject required has-error">
+					<label class="control-label" for="subject-subject">Территория / км2</label>
+					<input x-mask="9999999999" type="text" id="subject-subject" class="form-control" name="Subject[subject]" maxlength="255" aria-required="true" aria-invalid="true">
+					<div class="help-block"></div>
+				</div>
+			</div>
+		</div>
+
+		<button type="submit" class="button -red-bg"><i></i><span>Добавить</span></button>
+	</form>
+</div>
+
+
+
+    </main>
+    
+    <footer class="footer">
+	<div class="container">
+	
+	</div>
+ </footer>
+
+</div>
+
+    
+    <script src="javascript/alpine-mask.js" defer></script>
+	<script src="javascript/alpine.js" defer></script>
+    <script src="javascript/alpine-store.js"></script>
+    <script src="javascript/script.min.js"></script>
+
+</body>
+</html>

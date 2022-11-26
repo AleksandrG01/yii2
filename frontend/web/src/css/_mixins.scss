@@ -1,0 +1,137 @@
+
+
+// $container_width_desktop_adaptive_font: 1150;
+// @mixin adaptiv-font($pcSize, $mobSize){
+// 	$addSize: $pcSize - $mobSize;
+// 	$addMobSize: $pcSize + $mobSize * .7;
+// 	@media (max-width: 767px){font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$container_width_desktop_adaptive_font}));}
+// 	@media (min-width: 768px){font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$container_width_desktop_adaptive_font}));}
+// 	@media (min-width: #{$container_width_desktop_adaptive_font + px}){font-size: #{$pcSize + px};}
+// }
+
+$xs-width: 576px; //<576px mobile
+$sm-width: 576px; //≥576px mobile
+$md-width: 768px; //≥768px tablet
+$lg-width: 992px; //≥992px tablet-lg
+$xl-width: 1200px; //≥1200px desktop
+$xxl-width: 1400px; //≥1400px desktop-lg
+$xxxl-width: 1920px; //≥1920px  desktop-xxl
+
+//Media
+
+@mixin sm-before {
+	@media (max-width: #{$sm-width}) {
+		@content;
+	}
+}
+
+@mixin lg-before {
+	@media (max-width: #{$lg-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin md-before {
+	@media (max-width: #{$md-width}) {
+		@content;
+	}
+}
+
+@mixin xl-before {
+	@media (max-width: #{$xl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin xxl-before {
+	@media (max-width: #{$xxl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin xxxl-before {
+	@media (max-width: #{$xxxl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin sm-after {
+	@media (min-width: #{$sm-width + 1px}) {
+		@content;
+	}
+}
+
+@mixin md-after {
+	@media (min-width: #{$md-width + 1px}) {
+		@content;
+	}
+}
+
+@mixin lg-after {
+	@media (min-width: #{$lg-width}) {
+		@content;
+	}
+}
+
+@mixin xl-after {
+	@media (min-width: #{$xl-width}) {
+		@content;
+	}
+}
+
+@mixin xxl-after {
+	@media (min-width: #{$xxl-width}) {
+		@content;
+	}
+}
+
+@mixin xxxl-after {
+	@media (min-width: #{$xxxl-width}) {
+		@content;
+	}
+}
+
+@mixin between-sm-md {
+	@media (min-width: #{$sm-width + 1px}) and (max-width: #{$md-width}) {
+		@content;
+	}
+}
+
+@mixin between-md-lg {
+	@media (min-width: #{$md-width + 1px}) and (max-width: #{$lg-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin between-lg-xl {
+	@media (min-width: #{$lg-width}) and (max-width: #{$xl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin between-md-xl {
+	@media (min-width: #{$md-width + 1px}) and (max-width: #{$xl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin between-xl-xxl {
+	@media (min-width: #{$xl-width}) and (max-width: #{$xxl-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {
+		@content;
+	}
+	:-moz-placeholder {
+		@content;
+	}
+	::-moz-placeholder {
+		@content;
+	}
+	:-ms-input-placeholder {
+		@content;
+	}
+}

@@ -1,0 +1,87 @@
+._centered {
+	text-align: center;
+}
+
+._img-fluid {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+._text-center {
+	text-align: center;
+}
+
+._align-right {
+	text-align: right;
+}
+
+._smaller-text {
+	font-size: 0.825rem;
+}
+
+.text-bigger,
+._bigger-text {
+	@include md-after {
+		& {
+			font-size: 1.235rem;
+		}
+	}
+}
+
+._pic-fluid {
+	height: 0;
+	position: relative;
+	padding-bottom: 100px;
+	img {
+		position: absolute;
+		display: block;
+		object-fit: cover;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+	}
+}
+
+._pt-xl {
+	padding-top: 30px;
+
+	@include lg-after {
+		& {
+			padding-top: 60px;
+		}
+	}
+}
+
+[x-cloak=""] {
+	display: none;
+}
+
+._hide-xs-sm {
+	display: none !important;
+
+	@include lg-after {
+		& {
+			display: initial !important;
+		}
+	}
+}
+._align-center {
+	display: flex;
+	align-items: center;
+}
+
+._hide-md-up {
+	@include lg-after {
+		& {
+			display: none !important;
+		}
+	}
+}
+
+
+._no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}

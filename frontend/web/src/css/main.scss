@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+@import "minimal-reset";
+@import "bootstrap-grid";
+@import "extend";
+
+$hamburger-types        : (collapse);
+$hamburger-padding-y    : 21px !default;
+$hamburger-layer-color  : rgb(0, 0, 0) !default;
+$hamburger-layer-width  : 30px !default;
+$hamburger-layer-height : 2px !default;
+$hamburger-layer-spacing: 4px !default;
+
+
+// @import "../vendor/css-hamburgers/_sass/hamburgers/hamburgers";
+// @import "../vendor/sweetalert2/src/sweetalert2.scss";
+// @import "../vendor/swiper/swiper.scss"; 
+//@import "../vendor/nouislider/dist/nouislider.scss";
+//@import "../vendor/custom-scrollbar-plugin-master/jquery.mCustomScrollbar.scss";
+//@import "../vendor/fullPage/jquery.fullpage.scss";
+
+@import "fonts";
+@import "typography";
+@import "common";
+@import "helpers";
+@import "components/*.scss";
+@import "pages/*.scss";

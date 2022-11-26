@@ -1,0 +1,10 @@
+
+<section class="section-subjects" x-data :class="$store.openForm.on && '-active'">
+	<div class="container">
+		@@include('_title.html')
+		@@include('_sorting.html')
+		@@include('_subject-items.html')
+		@@include('_pagination.html')
+	</div>
+</section>
+@@include('_form.html')

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Demo</title>
+</head>
+
+
+<body >
+
+
+<div class="wrapper" x-data="{ styckyMenu: false }">
+    @@include('html-components/components/_header.html')
+    
+    <main class="main">
+        @@include('html-components/subjekts/_content.html')
+    </main>
+    
+    @@include('html-components/components/_footer.html')
+
+</div>
+
+@@include('html-components/components/_popup.html')    
+    <script src="javascript/alpine-mask.js" defer></script>
+	<script src="javascript/alpine.js" defer></script>
+    <script src="javascript/alpine-store.js"></script>
+    <script src="javascript/script.min.js"></script>
+
+</body>
+</html>
