@@ -40,7 +40,7 @@ class Subject extends \yii\db\ActiveRecord
             [['subject', 'okato', 'population', 'population_rising', 'administrative_center', 'territory'], 'required', 'message' => 'Обязательно для заполнения.'],
             [['okato', 'population', 'territory', 'status_id',], 'integer'],
             [['subject', 'administrative_center'], 'string', 'max' => 255],
-            [['file'], 'file'],
+            [['file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             ['status_id', 'safe'],
         ];
     }
