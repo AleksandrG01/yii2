@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii;
 use yii\filters\AccessControl;
+use yii\helpers\FileHelper;
 use yii\helpers\Url;
 
 /**
@@ -116,13 +117,15 @@ class SubjectsController extends Controller
             $model->updated_at  = date('Y-m-d h:m:s');
             $imageName                 = time();
             $imageFile = $model->file  = UploadedFile::getInstance($model, 'file');
-
+            
             if (!empty($model->file)) {
+                // unlink(Yii::getAlias('@backend/web/uploads/').$model->gerb);
+
                 $PathToimage = Url::to('@backend/web/uploads/') . 'gerb_' . $imageName . '.' . $model->file->extension;
                 $imageFile->saveAs($PathToimage);
                 $model->gerb = 'gerb_' . $imageName . '.' . $model->file->extension;
             }
-
+            
             $model->update();
 
             return $this->redirect(['view', 'id' => $model->id]);
