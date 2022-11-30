@@ -1,33 +1,12 @@
 <?php
 
 namespace backend\models;
-
+use common\models\User;
 use Yii;
 
-/**
- * This is the model class for table "user".
- *
- * @property int $id
- * @property string $username
- * @property string $auth_key
- * @property string $password_hash
- * @property string|null $password_reset_token
- * @property string $email
- * @property int $status
- * @property int $created_at
- * @property int $updated_at
- * @property string|null $verification_token
- */
-class User extends \yii\db\ActiveRecord
-{
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'user';
-    }
 
+class Usermodel extends User
+{
     /**
      * {@inheritdoc}
      */

@@ -1,6 +1,6 @@
 <?php
 
-use backend\models\User;
+use backend\models\Usermodel as User;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
