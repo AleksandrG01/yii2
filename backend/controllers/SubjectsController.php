@@ -146,7 +146,9 @@ class SubjectsController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-        unlink(Yii::getAlias('@backend/web/uploads/').$model->gerb);
+        if($model->gerb){
+            unlink(Yii::getAlias('@backend/web/uploads/').$model->gerb);
+        }
         $model->delete();
 
         return $this->redirect(['index']);
