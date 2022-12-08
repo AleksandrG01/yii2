@@ -114,21 +114,9 @@ class SubjectsController extends Controller
 
         if ($this->request->isPost && $model->load($this->request->post())) {
 
-            $model->updated_at  = date('Y-m-d h:m:s');
-            $imageName                 = time();
-            $imageFile = $model->file  = UploadedFile::getInstance($model, 'file');
+            $model->file = UploadedFile::getInstance($model, 'file');
+            return $this->redirect(['view', 'id' => $model->updateSubject()]);
             
-            if (!empty($model->file)) {
-                // unlink(Yii::getAlias('@backend/web/uploads/').$model->gerb);
-
-                $PathToimage = Url::to('@backend/web/uploads/') . 'gerb_' . $imageName . '.' . $model->file->extension;
-                $imageFile->saveAs($PathToimage);
-                $model->gerb = 'gerb_' . $imageName . '.' . $model->file->extension;
-            }
-            
-            $model->update();
-
-            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [

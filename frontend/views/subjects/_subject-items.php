@@ -14,11 +14,11 @@
 					</div>
 					<div class="subject-option-item">
 						<div class="subject-option-title">Территория</div>
-						<div class="subject-option-text"><?= $subject->territory ?></div>
+						<div class="subject-option-text"><?= number_format($subject->territory, 0, '', ',') ?></div>
 					</div>
 					<div class="subject-option-item">
 						<div class="subject-option-title">Население</div>
-						<div class="subject-option-text"><?= $subject->population ?> чел.</div>
+						<div class="subject-option-text"><?= number_format($subject->population, 0, '', ',') ?> чел.</div>
 					</div>
 				</div>
 			</div>

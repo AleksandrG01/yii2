@@ -26,6 +26,11 @@ use yii\web\UploadedFile;
     <?php endif ?>
 
     <?php if(!Yii::$app->user->isGuest && Yii::$app->user->identity->role == 1): ?>
+
+        <div class="subject-image _pic-fluid">
+			<img width="100" height="100" src="<?= Yii::getAlias('@images/' . $model->gerb) ?>" alt="<?= $model->subject ?>">
+		</div>
+
         <?= $form->field($model, 'file')->fileInput() ?>
     <?php endif ?>
 

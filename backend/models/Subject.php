@@ -131,4 +131,45 @@ class Subject extends \yii\db\ActiveRecord
 
     }
 
+
+    public function updateSubject()
+    {
+        $subject = Subject::findOne(['id' => $this->id]);
+        
+        $subject->created_at                = date('Y-m-d h:m:s');
+        $subject->status_id                 = $this->status_id;
+        $subject->subject                   = $this->subject;
+        $subject->okato                     = $this->okato;
+        $subject->territory                 = $this->territory;
+        $subject->population                = $this->population;
+        $subject->population_rising         = $this->population_rising;
+        $subject->administrative_center     = $this->administrative_center;
+        
+        
+        if(!empty($this->file)){
+
+            if($subject->gerb){
+                unlink(Yii::getAlias('@backend/web/uploads/').$subject->gerb);
+            }
+            
+            $imageFile  = $this->file;
+            $imageName  = time();
+            
+            $PathToimage = Url::to('@backend/web/uploads/') . 'gerb_'.$imageName.'.'.$this->file->extension;
+            $imageFile->saveAs($PathToimage);
+            $subject->gerb = 'gerb_'.$imageName.'.'.$this->file->extension;
+        }
+
+        if ($subject->update()) {
+            return $subject->id;
+        } else {
+          echo "MODEL NOT SAVED";
+          print_r($subject->getAttributes());
+          print_r($subject->getErrors());
+          exit;
+        }
+
+    }
+
+
 }
