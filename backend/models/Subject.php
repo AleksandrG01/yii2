@@ -135,8 +135,7 @@ class Subject extends \yii\db\ActiveRecord
     public function updateSubject()
     {
         $subject = Subject::findOne(['id' => $this->id]);
-        
-        $subject->created_at                = date('Y-m-d h:m:s');
+        $subject->updated_at                = date('Y-m-d h:m:s');
         $subject->status_id                 = $this->status_id;
         $subject->subject                   = $this->subject;
         $subject->okato                     = $this->okato;
