@@ -16,10 +16,7 @@ class AppAsset extends AssetBundle
         'css/main.min.css',
     ];
     public $js = [
-        'js/alpine-mask.js',
-        // 'js/script.js',
-        'js/script.min.js',
-        'js/alpine.js',
+        'js/script.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

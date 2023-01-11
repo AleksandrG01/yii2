@@ -4,8 +4,7 @@ use frontend\controllers\SubjectsController;
 ?>
 
 <div class="subject-sorting-wrapper">
-	<a href="#" class="button -hover-red-bg -iconed-right" :class="{ '-scrolled': styckyMenu, '': !styckyMenu }"
-	@scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" x-data @click.prevent="$store.openForm.toggle()">
+	<a href="#" class="--js-open-close-form button -hover-red-bg -iconed-right" onclick="openCloseForm()">
 		Добавить 
 		<i>
 			<svg>
@@ -13,15 +12,17 @@ use frontend\controllers\SubjectsController;
 			</svg>
 		</i>
 	</a>
-	<div class="subject-sorting" x-data="{show:0, }"  @click.away="show = false" x-cloak>
-		<div class="subject-sorting-text" @click="show = !show" @keydown.enter="show = !show" :class="{'active' : show}">
+	<div class="subject-sorting">
+		<div class="subject-sorting-text --js-sorting-open-close" onclick="openCloseSorting()">
 			Сортировать по 
 			<span ><?= SubjectsController::textSorting($sort_name) ?></span>
 		</div>
-		<ul class="subject-sorting-list" x-show="show" x-cloak>
+		<ul class="subject-sorting-list --js-subject-sorting-list" style="display: none;">
 			<li @click="show = false"><?= $sort->link('territory') ?></li>
 			<li @click="show = false"><?= $sort->link('population') ?></li>
 			<li @click="show = false"><?= $sort->link('okato') ?></li>
 		</ul>
 	</div>
 </div>
+
+

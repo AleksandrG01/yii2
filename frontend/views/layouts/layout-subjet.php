@@ -33,7 +33,7 @@ AppAsset::register($this);
 <body > <?php $this->beginBody() ?>
 
 
-<div class="wrapper" x-data="{ styckyMenu: false }">
+<div class="wrapper">
     <?= 
         $this->render('//components/_header') 
     ?>

@@ -6,13 +6,13 @@ use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 ?>
 
-<?php Pjax::begin(); ?>
 
-<div class="subject-form-wrapper" x-data :class="$store.openForm.on && '-active'">
-
-	<svg  class="icon-close-form"  x-data @click.prevent="$store.openForm.closeForm()">
-		<use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
+<div class="subject-form-wrapper --js-subject-form">
+    
+    <svg  class="icon-close-form --js-open-close-form" onclick="openCloseForm()" >
+        <use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
 	</svg>
+    <?php Pjax::begin(); ?>
 
     <?= $this->render('_success-create') ?>
 
@@ -26,20 +26,21 @@ use yii\widgets\Pjax;
             ],
         ]); ?>
 
-        <div x-data="imgPreview" x-cloak class="form-group" >
+        <div class="form-group" >
             <?= $form->field($model, 'file', [
                     'template' => "
-                        <input type='file' id='subject-file' name='Subject[file]' accept='image/*' x-ref='myFile' @change='previewFile'>\n
+                        <input type='file' name='Subject[file]' id='subject-file' accept='image/*' onchange='setImage(this)'>\n
                         <span class='image-plaseholder'>Добавить <br> герб</span>\n
-                        <template x-if='imgsrc'><img :src='imgsrc'></template>\n
-                        <span class='clearImage' @click='clearFile' x-bind:class='{\"-active\": showedImage()}'>\n
+                        <img id='image-preview' src='#' alt='' />\n
+                        <span class='clearImage --js-clear-image-subject'>\n
                             <svg>
                                 <use xlink:href='/images/svg-sprite/symbol/svg/sprite.symbol.svg#trash' aria-hidden='true'></use>
                             </svg>
                         </span>\n
                         {error}",
-                    'options' => ['class' => 'imgSelect _pic-fluid', 'tag' => 'label', 'for' => 'subject-file', 'x-bind:class' => '{ \'-active\': showedImage()}'],
+                    'options' => ['class' => 'imgSelect _pic-fluid', 'tag' => 'label', 'for' => 'subject-file'],
                 ])->fileInput([], false) ?>
+
         </div>
 
         <div class="row">
@@ -79,8 +80,8 @@ use yii\widgets\Pjax;
 
     <?php ActiveForm::end(); ?>
 
+    <?php Pjax::end(); ?>
     </div>
 
-<?php Pjax::end(); ?>
 
 

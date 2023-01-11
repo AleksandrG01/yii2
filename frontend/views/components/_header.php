@@ -1,10 +1,8 @@
-<header class="header" 
-        :class="{ '-scrolled': styckyMenu, '': !styckyMenu }"
-        @scroll.window="styckyMenu = (window.pageYOffset < 50) ? false: true" >
+<header class="header" >
 
     <div class="container" >
         <div class="header-wrapper">
-            <a href="#" class="button -hover-red-bg -iconed-right" x-data @click.prevent="$store.openForm.toggle()">
+            <a href="#" class="button -hover-red-bg -iconed-right --js-open-close-form" onclick="openCloseForm()">
                 Добавить 
                 <i>
                     <svg>
@@ -13,7 +11,7 @@
                 </i>
             </a>
 
-            <svg class="add-subject" x-data @click.prevent="$store.openForm.toggle()">
+            <svg class="add-subject --js-open-close-form" onclick="openCloseForm()">
                 <use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
             </svg>
 
