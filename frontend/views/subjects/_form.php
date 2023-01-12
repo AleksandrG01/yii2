@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 
 <div class="subject-form-wrapper --js-subject-form">
     
-    <svg  class="icon-close-form --js-open-close-form" onclick="openCloseForm()" >
+    <svg  class="icon-close-form --js-open-close-form" >
         <use xlink:href="/images/svg-sprite/symbol/svg/sprite.symbol.svg#pluss" aria-hidden="true"></use>
 	</svg>
     <?php Pjax::begin(); ?>
@@ -85,3 +85,28 @@ use yii\widgets\Pjax;
 
 
 
+    <script>
+
+        function setImage(image){
+            let file = image.files[0];
+            console.log($('#imgSelect'));
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function (event) {
+                    $("#image-preview")
+                    .attr("src", event.target.result);
+                };
+                reader.readAsDataURL(file);
+
+                let clearSpanicon = document.querySelectorAll('.--js-clear-image-subject');
+                $(clearSpanicon).addClass( "-active" );
+                $( clearSpanicon ).click(function() {
+                    $("#image-preview").attr("src", "");
+                    $('#imgSelect').val("");
+                    $(clearSpanicon).removeClass( "-active" );
+                    file = null;
+                });
+            }
+        }
+
+    </script>

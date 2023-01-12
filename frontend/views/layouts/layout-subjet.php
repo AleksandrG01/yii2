@@ -30,7 +30,7 @@ AppAsset::register($this);
 </head>
 
 
-<body > <?php $this->beginBody() ?>
+<body class="--js-body-subjects"> <?php $this->beginBody() ?>
 
 
 <div class="wrapper">

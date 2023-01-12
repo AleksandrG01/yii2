@@ -4,7 +4,7 @@ use frontend\controllers\SubjectsController;
 ?>
 
 <div class="subject-sorting-wrapper">
-	<a href="#" class="--js-open-close-form button -hover-red-bg -iconed-right" onclick="openCloseForm()">
+	<a href="#" class="--js-open-close-form button -hover-red-bg -iconed-right">
 		Добавить 
 		<i>
 			<svg>
@@ -13,7 +13,7 @@ use frontend\controllers\SubjectsController;
 		</i>
 	</a>
 	<div class="subject-sorting">
-		<div class="subject-sorting-text --js-sorting-open-close" onclick="openCloseSorting()">
+		<div class="subject-sorting-text --js-sorting-open-close">
 			Сортировать по 
 			<span ><?= SubjectsController::textSorting($sort_name) ?></span>
 		</div>
